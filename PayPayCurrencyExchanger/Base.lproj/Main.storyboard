@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5w7-d4-pXR">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PayPay CurrencyExchanger-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CurrencyViewController" id="BYZ-38-t0r" customClass="CurrencyViewController" customModule="PayPayExchangeRates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzJ-LI-cCZ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2vt-lO-ZYl">
+                                        <rect key="frame" x="20" y="10" width="335" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="F7h-nN-O4O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numberPad" returnKeyType="done" textContentType="given-name"/>
+                                    </textField>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="USD" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nnc-9u-chZ">
+                                        <rect key="frame" x="235" y="60" width="120" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="kaY-pL-KkQ"/>
+                                            <constraint firstAttribute="height" constant="40" id="xaI-93-QKg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="address-line2"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-Zi-Mi2">
+                                        <rect key="frame" x="315" y="60" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="b4h-Zi-Mi2" secondAttribute="height" multiplier="1:1" id="Uqz-q8-YTm"/>
+                                            <constraint firstAttribute="height" constant="40" id="kav-st-Yvd"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="nav_down_full"/>
+                                        <connections>
+                                            <action selector="onDropDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QOZ-oj-KOi"/>
+                                        </connections>
+                                    </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vAl-WS-Wk1">
+                                        <rect key="frame" x="20" y="110" width="335" height="503"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EcW-RP-nxg">
+                                            <size key="itemSize" width="100" height="100"/>
+                                            <size key="headerReferenceSize" width="50" height="50"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="7AA-WW-aP0"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="O0E-61-eFA"/>
+                                        </connections>
+                                    </collectionView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbW-5B-JM5">
+                                        <rect key="frame" x="235" y="110" width="120" height="200"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0wh-L4-j9W">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="200"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="M9K-1z-SaE"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Nl0-OU-x6q"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="0wh-L4-j9W" secondAttribute="bottom" id="8Wl-Xt-bUN"/>
+                                            <constraint firstAttribute="trailing" secondItem="0wh-L4-j9W" secondAttribute="trailing" id="NZ6-CQ-hC8"/>
+                                            <constraint firstItem="0wh-L4-j9W" firstAttribute="leading" secondItem="xbW-5B-JM5" secondAttribute="leading" id="VKi-HI-OyY"/>
+                                            <constraint firstAttribute="height" constant="200" id="aMX-08-MRx"/>
+                                            <constraint firstItem="0wh-L4-j9W" firstAttribute="top" secondItem="xbW-5B-JM5" secondAttribute="top" id="gth-hG-cvM"/>
+                                            <constraint firstAttribute="width" constant="120" id="mrf-SZ-RXT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2vt-lO-ZYl" firstAttribute="leading" secondItem="qzJ-LI-cCZ" secondAttribute="leading" constant="20" id="1KZ-LD-teR"/>
+                                    <constraint firstAttribute="trailing" secondItem="nnc-9u-chZ" secondAttribute="trailing" constant="20" id="2Vo-rS-7La"/>
+                                    <constraint firstItem="b4h-Zi-Mi2" firstAttribute="width" secondItem="b4h-Zi-Mi2" secondAttribute="height" multiplier="1:1" id="2pW-kq-AMH"/>
+                                    <constraint firstItem="b4h-Zi-Mi2" firstAttribute="bottom" secondItem="nnc-9u-chZ" secondAttribute="bottom" id="6xs-Bx-f5x"/>
+                                    <constraint firstItem="vAl-WS-Wk1" firstAttribute="top" secondItem="nnc-9u-chZ" secondAttribute="bottom" constant="10" id="DWY-WX-buj"/>
+                                    <constraint firstAttribute="trailing" secondItem="xbW-5B-JM5" secondAttribute="trailing" constant="20" id="H7F-91-dXF"/>
+                                    <constraint firstAttribute="trailing" secondItem="b4h-Zi-Mi2" secondAttribute="trailing" constant="20" id="HpH-56-aMA"/>
+                                    <constraint firstItem="b4h-Zi-Mi2" firstAttribute="top" secondItem="2vt-lO-ZYl" secondAttribute="bottom" constant="10" id="IYg-6x-3Vb"/>
+                                    <constraint firstItem="vAl-WS-Wk1" firstAttribute="leading" secondItem="qzJ-LI-cCZ" secondAttribute="leading" constant="20" id="JEr-N2-PBe"/>
+                                    <constraint firstItem="nnc-9u-chZ" firstAttribute="top" secondItem="2vt-lO-ZYl" secondAttribute="bottom" constant="10" id="K6S-ER-I3t"/>
+                                    <constraint firstItem="xbW-5B-JM5" firstAttribute="top" secondItem="nnc-9u-chZ" secondAttribute="bottom" constant="10" id="SP8-hM-IFk"/>
+                                    <constraint firstAttribute="trailing" secondItem="2vt-lO-ZYl" secondAttribute="trailing" constant="20" id="YNz-ay-i32"/>
+                                    <constraint firstItem="2vt-lO-ZYl" firstAttribute="top" secondItem="qzJ-LI-cCZ" secondAttribute="top" constant="10" id="fCC-kv-MjG"/>
+                                    <constraint firstAttribute="bottom" secondItem="vAl-WS-Wk1" secondAttribute="bottom" constant="10" id="kmn-he-Qrj"/>
+                                    <constraint firstItem="b4h-Zi-Mi2" firstAttribute="top" secondItem="nnc-9u-chZ" secondAttribute="top" id="nDh-fZ-MbZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="vAl-WS-Wk1" secondAttribute="trailing" constant="20" id="p5K-vh-I8y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qzJ-LI-cCZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="OIe-kU-MEN"/>
+                            <constraint firstItem="qzJ-LI-cCZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wt4-ZI-iFp"/>
+                            <constraint firstItem="qzJ-LI-cCZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jVM-7o-7hw"/>
+                            <constraint firstItem="qzJ-LI-cCZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nnH-FI-G47"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PayPay CurrencyExchanger" id="emd-Ug-lw2"/>
+                    <connections>
+                        <outlet property="amountTextField" destination="2vt-lO-ZYl" id="ctd-s0-ALd"/>
+                        <outlet property="countryContainerView" destination="xbW-5B-JM5" id="rlZ-bL-A08"/>
+                        <outlet property="countryTableView" destination="0wh-L4-j9W" id="ZY0-b5-2mk"/>
+                        <outlet property="countryTextField" destination="nnc-9u-chZ" id="9rn-EI-KPP"/>
+                        <outlet property="exchangeCollectionView" destination="vAl-WS-Wk1" id="KHi-Mb-5k7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-199.19999999999999" y="-168.6656671664168"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fP9-A1-KTl">
+            <objects>
+                <navigationController id="5w7-d4-pXR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lhu-Nu-Bnv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dQw-tt-KZk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HuN-RB-44E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ly5-hk-P6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1215" y="-169"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nav_down_full" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ExchangeCollectionViewCell" id="gTV-IL-0wX" customClass="ExchangeCollectionViewCell" customModule="PayPayExchangeRates" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="134" height="129"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="134" height="129"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDi-G8-i7T">
+                        <rect key="frame" x="0.0" y="0.0" width="134" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ddr-9V-oMo">
+                                <rect key="frame" x="0.0" y="1.5" width="134" height="97.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ddr-9V-oMo" secondAttribute="bottom" id="0ks-SZ-2Ce"/>
+                            <constraint firstItem="ddr-9V-oMo" firstAttribute="leading" secondItem="GDi-G8-i7T" secondAttribute="leading" id="NQS-zs-Ygb"/>
+                            <constraint firstItem="ddr-9V-oMo" firstAttribute="top" secondItem="GDi-G8-i7T" secondAttribute="top" id="cfi-1A-DpM"/>
+                            <constraint firstAttribute="trailing" secondItem="ddr-9V-oMo" secondAttribute="trailing" id="pwj-Dl-EuA"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bs-SH-iNO">
+                        <rect key="frame" x="0.0" y="100" width="134" height="29"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIx-2T-AWM">
+                                <rect key="frame" x="2" y="4" width="30" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="81G-D6-tgn"/>
+                                    <constraint firstAttribute="width" constant="30" id="Kjz-45-MC1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="82.90551" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zt-5U-1gh">
+                                <rect key="frame" x="34" y="4" width="98" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="GV2-yT-Gku"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bIx-2T-AWM" firstAttribute="top" secondItem="3Bs-SH-iNO" secondAttribute="top" constant="4" id="7pe-Xe-diH"/>
+                            <constraint firstAttribute="trailing" secondItem="6zt-5U-1gh" secondAttribute="trailing" constant="2" id="JoO-8K-j43"/>
+                            <constraint firstItem="bIx-2T-AWM" firstAttribute="leading" secondItem="3Bs-SH-iNO" secondAttribute="leading" constant="2" id="Nbp-ON-pcP"/>
+                            <constraint firstItem="6zt-5U-1gh" firstAttribute="leading" secondItem="bIx-2T-AWM" secondAttribute="trailing" constant="2" id="dUj-JD-UNL"/>
+                            <constraint firstAttribute="height" constant="29" id="dlz-fY-Ch2"/>
+                            <constraint firstItem="6zt-5U-1gh" firstAttribute="top" secondItem="3Bs-SH-iNO" secondAttribute="top" constant="4" id="nN4-8e-Mqs"/>
+                            <constraint firstAttribute="bottom" secondItem="6zt-5U-1gh" secondAttribute="bottom" constant="4" id="rXw-kp-Eyx"/>
+                            <constraint firstAttribute="bottom" secondItem="bIx-2T-AWM" secondAttribute="bottom" constant="4" id="wR4-n3-akC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="3Bs-SH-iNO" firstAttribute="top" secondItem="GDi-G8-i7T" secondAttribute="bottom" id="1Xq-6z-iWf"/>
+                <constraint firstAttribute="bottom" secondItem="3Bs-SH-iNO" secondAttribute="bottom" id="45B-az-Doo"/>
+                <constraint firstItem="GDi-G8-i7T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EzV-nh-nej"/>
+                <constraint firstItem="3Bs-SH-iNO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GLO-pb-tZb"/>
+                <constraint firstAttribute="trailing" secondItem="3Bs-SH-iNO" secondAttribute="trailing" id="Gbr-5M-PEf"/>
+                <constraint firstAttribute="trailing" secondItem="GDi-G8-i7T" secondAttribute="trailing" id="nGr-Xd-zLL"/>
+                <constraint firstItem="GDi-G8-i7T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="u60-Te-895"/>
+            </constraints>
+            <size key="customSize" width="134" height="129"/>
+            <connections>
+                <outlet property="amountLabel" destination="6zt-5U-1gh" id="qvG-1x-wRY"/>
+                <outlet property="countryLabel" destination="bIx-2T-AWM" id="IzG-4n-s0Z"/>
+                <outlet property="imageView" destination="ddr-9V-oMo" id="dcB-50-I8b"/>
+            </connections>
+            <point key="canvasLocation" x="198.55072463768118" y="140.95982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
